@@ -6,11 +6,11 @@ const Blog = ({ blog, handleAddToBookmark }) => {
    const {title, cover, author, author_img,reading_time, posted_date, hashtags} = blog;
     return (
         <div className='mb-20'>
-            <img className='w-full mb-8 ' src={cover} alt="" />
+            <img className='w-1/2 rounded-xl mb-8 ' src={cover} alt="" />
             <div className='flex justify-between mb-4'>
                 <div className='flex gap-6'>
 
-                    <img className='w-8 m-1 p-1  ' src={author_img} alt="" />
+                    <img className='w-10 m-1 rounded-xl p-1  ' src={author_img} alt="" />
 
                     <div>
                         <h3 className='text-2-xl'>
@@ -24,7 +24,7 @@ const Blog = ({ blog, handleAddToBookmark }) => {
 
                     <span>{reading_time} min read</span>
                     <button 
-                    onClick={handleAddToBookmark}
+                    onClick={() => handleAddToBookmark(blog)}
                     className='text-gray-600 ml-2 text-2xl'><FaRegBookmark /></button>
 
                 </div>
@@ -49,5 +49,6 @@ const Blog = ({ blog, handleAddToBookmark }) => {
 
 Blog.PropTypes = {
     blog: PropTypes.object.isRequired
+    // handleAddToBookmark:PropTypes.func
 }
 export default Blog;
